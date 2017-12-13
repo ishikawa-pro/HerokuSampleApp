@@ -1,0 +1,32 @@
+version: '2'
+
+volumes:
+  db:
+      driver: 'local'
+services:
+  db:
+    image: library/postgres
+    ports:
+      - "5432:5432"
+    env_file: common.env 
+    volumes:
+      - db:/var/lib/postgresql/data
+    container_name: HerokuSamplePostgres
+  web:
+    build: .
+    image: rails/heroku_sample_app:latest 
+    ports:
+      - "3000:3000"
+    env_file: common.env
+    environment:
+      POSTGRES_HOST: db
+    links:
+      - db:postgres
+    volumes:
+      - ./HerokuSampleApp/:/usr/src/HerokuSampleApp/
+    entrypoint: rails s -b 0.0.0.0
+    container_name: HerokuSampleApp 
+    restart: on-failure
+    stdin_open: true
+    tty: true
+
