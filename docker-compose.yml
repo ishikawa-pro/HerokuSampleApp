@@ -1,23 +1,23 @@
 version: '2'
 
 volumes:
-  db:
+  pgdb:
       driver: 'local'
 services:
   db:
     image: library/postgres
     ports:
       - "5432:5432"
-    env_file: common.env 
+    env_file: .env 
     volumes:
-      - db:/var/lib/postgresql/data
+      - pgdb:/var/lib/postgresql/data
     container_name: HerokuSamplePostgres
   web:
     build: .
     image: rails/heroku_sample_app:latest 
     ports:
       - "3000:3000"
-    env_file: common.env
+    env_file: .env
     environment:
       POSTGRES_HOST: db
     links:
