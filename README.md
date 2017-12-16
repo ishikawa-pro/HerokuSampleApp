@@ -6,7 +6,7 @@ http://ishikawa-pro.hatenablog.com/entry/2017/12/15/120459
 ## how to deploy to Heroku Container Registroy.  
 
 1. this repository clone
-2. docker build -t hroku_sample_app .
+2. docker build -t heroku_sample_app .
 3. heroku login
 4. heroku container:login
 5. heroku create
