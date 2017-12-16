@@ -3,7 +3,7 @@ This is a sample app for deploying to Container Registry.
 http://ishikawa-pro.hatenablog.com/entry/2017/12/15/120459  
 
 # Usage
-## how to deploy to Heroku Container Registroy.  
+## how to deploy to Heroku Container Registry.  
 
 ```  
 this repository clone
