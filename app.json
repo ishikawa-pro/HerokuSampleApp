@@ -1,0 +1,20 @@
+{
+    "name": "Heroku Sample App",
+    "description": "This app is sample of Heroku Container Registry.",
+    "repository": "https://github.com/ishikawa-pro/HerokukSampleApp",
+    "logo": "https://user-images.githubusercontent.com/12871716/34070771-519121f8-e2af-11e7-9dc0-ce52ae7abadb.png",
+    "keywords": ["Ruby on Rails"],
+    "success_url": "/users",
+    "env": {
+        "SECRET_KEY_BASE": {
+              "description": "secret_key_base",
+              "value": ""
+        }
+    },
+    "addons": [
+        {
+        "plan": "heroku-postgresql:hobby-dev"
+        }
+    ],
+    "image": "ishikawa314159/heroku_sample_app"
+}
