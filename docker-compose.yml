@@ -14,7 +14,7 @@ services:
     container_name: HerokuSamplePostgres
   web:
     build: .
-    image: rails/heroku_sample_app:latest 
+    image: heroku_sample_app:latest 
     ports:
       - "3000:3000"
     env_file: .env
